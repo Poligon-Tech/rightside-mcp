@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "host.rightside/mcp",
+  "title": "RightSide",
+  "description": "Deploy apps to a live HTTPS URL from Claude Code or Codex: create, deploy, logs, env, rollback.",
+  "websiteUrl": "https://rightside.host",
+  "version": "0.1.3",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@rightsidehost/mcp",
+      "version": "0.1.3",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "RIGHTSIDE_TOKEN",
+          "description": "RightSide token. Optional: run `rightside login` (from @rightsidehost/cli) once instead and the server reads the stored credential.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "RIGHTSIDE_OPERATIONS_URL",
+          "description": "RightSide API origin. Optional; defaults to the hosted service.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
